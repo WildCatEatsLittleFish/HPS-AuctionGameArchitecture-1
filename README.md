@@ -27,7 +27,7 @@ player 0 wins t4 with 8 (AND WINS THE GAME)
 ## Get Started
 ```
 To start auction game, run start_game.py with following arguments:
-    python start_game.py -h <host> -p <port> -t <seconds> m k n
+    python start_game.py -h <host> [-p <port> -t <seconds>] m k n
 
 where:
     h is the IP address to listen
@@ -38,7 +38,7 @@ where:
     n is the number of items that must be obtained
 
 Then run the client as:
-    python sample_client.py <server_ip> <port> [<name>]
+    python sample_client.py <host_ip> <port> [<name>]
 
 When running multiple clients, the order of first round is the order of the clients entering the game, then the order will be determined by the order of clients returning the bids.
 ```
@@ -59,9 +59,9 @@ It should return an integer as the bid per turn.
 Then for each round, you will receive the game_state and current wealth,
 ```
 game_state: 'finished': whether the game has finished
-            'bid_item': auction item in last round
-            'bid_winner': winner in last round (player_name(str))
-            'winning_bid': winning bid in last round
+            'bid_item': auction item of last round
+            'bid_winner': winner of last round (player_name(str))
+            'winning_bid': winning bid of last round
             'wealth_table': dictionary of wealth of each player
                             {'player_name': wealth, ...}
             'remain_time': the time you have left
