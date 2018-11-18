@@ -181,7 +181,7 @@ class AuctionManager:
                     bids[idx]['received_time'] = datetime.now()
                     continue
 
-            bids = sorted(bids, key = itemgetter('received_time'))
+#             bids = sorted(bids, key = itemgetter('received_time'))
             #print("sorted bids: ", bids)
             # Handle valid bidders in received order
             for idx in range(len(bids)):
